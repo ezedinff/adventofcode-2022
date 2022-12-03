@@ -5,7 +5,6 @@
  */
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-use std::path::Path;
 
 fn parse_input(input_file: &str) -> Vec<Vec<i32>> {
     let file = File::open(input_file).unwrap();
@@ -51,7 +50,7 @@ fn part_2(elves: &Vec<Vec<i32>>) -> i32 {
 }
 
 fn main() {
-    let input_file = Path::new(&std::env::args().nth(1).unwrap());
+    let input_file = &std::env::args().nth(1).unwrap();
     let elves = parse_input(input_file);
     println!("Part 1: {}", part_1(&elves));
     println!("Part 2: {}", part_2(&elves));

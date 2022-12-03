@@ -6,21 +6,20 @@
 
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-use std::path::Path;
 
 fn main() {
-    let input_file = Path::new(&std::env::args().nth(1).unwrap());
+    let input_file = std::env::args().nth(1).unwrap();
     let input = BufReader::new(File::open(input_file).unwrap());
-    let mut moves: Vec<(String, String)> = Vec::new();
+    let mut moves = Vec::new();
 
     for line in input.lines() {
         let line = line.unwrap();
         let line = line.split_whitespace().collect::<Vec<&str>>();
-        moves.push((line[0].to_string(), line[2].to_string()));
+        moves.push((line[0].to_string(), line[1].to_string()));
     }
 
     let mut score = 0;
-    for (opponent, player) in moves {
+    for (opponent, player) in &moves {
         let round_score = play_round_part_1(&opponent, &player);
         score += round_score;
     }
@@ -82,24 +81,28 @@ fn play_round_part_2(opponent: &str, player: &str) -> i32 {
 
 fn move_map(move_str: &str) -> &str {
     match move_str {
-        "Rock" => "Rock",
-        "Paper" => "Paper",
-        "Scissors" => "Scissors",
+        "A" => "Rock",
+        "B" => "Paper",
+        "C" => "Scissors",
+        "X" => "Rock",
+        "Y" => "Paper",
+        "Z" => "Scissors",
         _ => panic!("Invalid move"),
     }
 }
 
 fn result_map(move_str: &str) -> &str {
+
     match move_str {
-        "Rock" => "Lose",
-        "Paper" => "Win",
-        "Scissors" => "Tie",
+        "X" => "Lose",
+        "Z" => "Win",
+        "Y" => "Tie",
         _ => panic!("Invalid move"),
     }
 }
 
-fn recommended_move_for_result_map(opponent_move: &str, result: &str) -> &str {
-    match (opponent_move, result) {
+fn recommended_move_for_result_map<'a>(move_str: &'a str, result_str: &'a str) -> &'a str {
+    match (move_str, result_str) {
         ("Rock", "Win") => "Paper",
         ("Rock", "Lose") => "Scissors",
         ("Rock", "Tie") => "Rock",
@@ -115,8 +118,8 @@ fn recommended_move_for_result_map(opponent_move: &str, result: &str) -> &str {
 
 fn score_map(move_str: &str) -> i32 {
     match move_str {
-        "Rock" => 0,
-        "Paper" => 6,
+        "Rock" => 1,
+        "Paper" => 2,
         "Scissors" => 3,
         _ => panic!("Invalid move"),
     }

@@ -12,7 +12,7 @@ This is my attempt at the [Advent of Code 2022](https://adventofcode.com/2022) c
 ## How to run python Solutions
 
 ```bash
-python3 day-1/sday-[day].py inputs/day-[day].txt
+python3 day-1/day-[day].py inputs/day-[day].txt
 ```
 
 ## How to run Kotlin Solutions
@@ -25,6 +25,6 @@ java -jar day-[day].jar inputs/day-[day].txt
 ## How to run Rust Solutions
 
 ```bash
-rustc day-1/day-[day].rs
-./day-[day] inputs/day-[day].txt
+rustc day-1/day-[day].rs -o out/day-[day]
+./out/day-[day] inputs/day-[day].txt
 ```

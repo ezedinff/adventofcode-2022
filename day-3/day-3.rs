@@ -5,16 +5,19 @@
  */
 use std::fs::File;
 use std::io::{BufRead, BufReader};
-use std::path::Path;
 
 fn main() {
-    let input_file = Path::new(&std::env::args().nth(1).unwrap());
-    let file = File::open(input_file).unwrap();
+    let input_file_path = std::env::args().nth(1).unwrap();
+    let file = File::open(input_file_path).unwrap();
     let reader = BufReader::new(file);
-    let mut lines = reader.lines().map(|l| l.unwrap()).collect::<Vec<String>>();
+    let mut lines = Vec::new();
+    for line in reader.lines() {
+        let line = line.unwrap();
+        lines.push(line);
+    }
     let mut rucksacks_part_1 = Vec::new();
     let mut rucksacks_part_2 = Vec::new();
-    for line in lines {
+    for line in &lines {
         rucksacks_part_1.push((line[0..line.len()/2].to_string(), line[line.len()/2..].to_string()));
     }
     for i in (0..lines.len()).step_by(3) {
@@ -30,7 +33,7 @@ fn part_1(rucksacks: &Vec<(String, String)>) -> i32 {
     for rucksack in rucksacks {
         for item in rucksack.0.chars() {
             if rucksack.1.contains(item) {
-                total += get_priority(item);
+                total += get_priority(&item);
                 break;
             }
         }
@@ -51,10 +54,10 @@ fn part_2(rucksacks: &Vec<(String, String, String)>) -> i32 {
     total
 }
 
-fn get_priority(c: char) -> i32 {
+fn get_priority(c: &char) -> i32 {
     if c.is_ascii_uppercase() {
-        c as i32 - 38
+        *c as i32 - 38
     } else {
-        c as i32 - 96
+        *c as i32 - 96
     }
 }
