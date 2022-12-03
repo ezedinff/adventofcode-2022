@@ -60,6 +60,9 @@ Priorities for these items must still be found to organize the sticker attachmen
 Find the item type that corresponds to the badges of each three-Elf group. What is the sum of the priorities of those item types?
 '''
 # @author: Ezedin Fedlu
+# @date: 2021-12-03
+# @version: 1.0.0
+# @description: Advent of Code 2022 - Day 3
 import sys
 from pathlib import Path
 from typing import List, Tuple
@@ -108,4 +111,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

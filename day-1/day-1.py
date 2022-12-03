@@ -50,6 +50,9 @@ Find the top three Elves carrying the most Calories. How many Calories are those
 '''
 
 # @author: Ezedin Fedlu
+# @date: 2021-12-01
+# @version: 1.0.0
+# @description: Advent of Code 2022 - Day 1
 import sys
 from pathlib import Path
 from typing import List, Tuple

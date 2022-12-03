@@ -21,3 +21,10 @@ python3 day-1/sday-[day].py inputs/day-[day].txt
 kotlinc day-1/day-[day].kt -include-runtime -d day-[day].jar
 java -jar day-[day].jar inputs/day-[day].txt
 ```
+
+## How to run Rust Solutions
+
+```bash
+rustc day-1/day-[day].rs
+./day-[day] inputs/day-[day].txt
+```

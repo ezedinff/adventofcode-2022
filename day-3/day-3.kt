@@ -1,6 +1,8 @@
-/**
-* @author: Ezedin Fedlu
-*/
+/* @author Ezedin Fedlu
+ * @date 2021-12-03
+ * @version 1.0
+ * @brief Advent of Code 2022 Day 3
+ */
 
 import java.io.File
 import java.io.InputStream

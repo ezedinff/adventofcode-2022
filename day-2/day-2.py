@@ -42,6 +42,9 @@ Following the Elf's instructions for the second column, what would your total sc
 '''
 
 # @author: Ezedin Fedlu
+# @date: 2021-12-02
+# @version: 1.0.0
+# @description: Advent of Code 2022 - Day 2
 import sys
 from pathlib import Path
 from typing import List, Tuple
@@ -143,4 +146,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
 
