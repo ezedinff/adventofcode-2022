@@ -15,8 +15,8 @@ fn main() {
         let line = line.unwrap();
         lines.push(line);
     }
-    let mut rucksacks_part_1 = Vec::new();
-    let mut rucksacks_part_2 = Vec::new();
+    let mut rucksacks_part_1 = Vec::with_capacity(lines.len());
+    let mut rucksacks_part_2 = Vec::with_capacity(lines.len());
     for line in &lines {
         rucksacks_part_1.push((line[0..line.len()/2].to_string(), line[line.len()/2..].to_string()));
     }
