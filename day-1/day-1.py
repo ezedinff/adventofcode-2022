@@ -85,20 +85,17 @@ def find_top_three_elves(elves: List[List[int]]) -> int:
     total_elves_calories.sort(reverse=True)
     return sum(total_elves_calories[:3])
 
+def part_1(elves: List[List[int]]) -> int:
+    return find_largest_elf(elves)
+
+def part_2(elves: List[List[int]]) -> int:
+    return find_top_three_elves(elves)
+
 def main():
     input_file = sys.argv[1]
     elves = parse_input(input_file)
-    top_three_elves = find_top_three_elves(elves)
-    print(top_three_elves)
+    print(f'Part 1: {part_1(elves)}')
+    print(f'Part 2: {part_2(elves)}')
 
 if __name__ == '__main__':
     main()
-
-
-# Part 1
-# def main():
-#     input_file = sys.argv[1]
-#     elves = parse_input(input_file)
-#     largest_elf = find_largest_elf(elves)
-#     print(largest_elf)
-
