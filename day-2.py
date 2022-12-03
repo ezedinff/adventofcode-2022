@@ -41,7 +41,7 @@ Now that you're correctly decrypting the ultra top secret strategy guide, you wo
 Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?
 '''
 
-
+# @author: Ezedin Fedlu
 import sys
 from pathlib import Path
 from typing import List, Tuple
