@@ -30,7 +30,7 @@ fn part_1(rucksacks: &Vec<(String, String)>) -> i32 {
     for rucksack in rucksacks {
         for item in rucksack.0.chars() {
             if rucksack.1.contains(item) {
-                total += item as i32 - 96;
+                total += get_priority(item);
                 break;
             }
         }
@@ -43,10 +43,18 @@ fn part_2(rucksacks: &Vec<(String, String, String)>) -> i32 {
     for rucksack in rucksacks {
         for item in rucksack.0.chars() {
             if rucksack.1.contains(item) && rucksack.2.contains(item) {
-                total += item as i32 - 96;
+                total += get_priority(&item);
                 break;
             }
         }
     }
     total
+}
+
+fn get_priority(c: char) -> i32 {
+    if c.is_ascii_uppercase() {
+        c as i32 - 38
+    } else {
+        c as i32 - 96
+    }
 }
