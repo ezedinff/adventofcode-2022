@@ -13,6 +13,8 @@ This is my attempt at the [Advent of Code 2022](https://adventofcode.com/2022) c
   - [Day 7 - No Space Left On Device](./day-7)
   - [Day 8 - Treetop Tree House](./day-8)
   - [Day 9 - Rope Bridge](./day-9)
+  - [Day 10 - Cathode-Ray Tube](./day-10)
+  - [Day 11 - Monkey in the Middle](./day-11)
 
 
 ## How to run python Solutions
