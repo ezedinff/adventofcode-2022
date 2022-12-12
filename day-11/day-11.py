@@ -1,3 +1,8 @@
+# @author: Ezedin Fedlu
+# @date: 2022-12-11
+# @version: 1.0.0
+# @description: Advent of Code 2022 - Day 11
+
 import sys
 
 def parse_input():
