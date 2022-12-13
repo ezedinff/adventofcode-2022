@@ -15,7 +15,8 @@ This is my attempt at the [Advent of Code 2022](https://adventofcode.com/2022) c
   - [Day 9 - Rope Bridge](./day-09)
   - [Day 10 - Cathode-Ray Tube](./day-10)
   - [Day 11 - Monkey in the Middle](./day-11)
-  - [Day 12 - THill Climbing Algorithm](./day-12)
+  - [Day 12 - Hill Climbing Algorithm](./day-12)
+  - [Day 13 - The Great Firewall](./day-13)
 
 
 ## How to run python Solutions
