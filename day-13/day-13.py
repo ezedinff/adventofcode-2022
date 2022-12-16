@@ -4,10 +4,12 @@
 # @description: Advent of Code 2022 - Day 13
 
 import sys
+import unittest
 from functools import cmp_to_key
 
-def parse_input():
-    with open(sys.argv[1]) as f:
+def parse_input(file_path):
+    print(sys.argv[1])
+    with open(file_path) as f:
         return [group for group in f.read().strip().split("\n\n")]
 
 
@@ -63,10 +65,21 @@ def part2(packets):
     return ans
 
 def main():
-    data = parse_input()
+    data = parse_input(sys.argv[1])
     ans, packets = part1([], data)
     print(f"Part 1: {ans}")
     print(f"Part 2: {part2(packets)}")
 
+class Test(unittest.TestCase):
+    def test_part1(self):
+        data = parse_input("inputs/day-13.txt")
+        ans, _ = part1([], data)
+        self.assertEqual(ans, 4643)
+
+    def test_part2(self):
+        data = parse_input("inputs/day-13.txt")
+        _, packets = part1([], data)
+        self.assertEqual(part2(packets), 21614)
+
 if __name__ == "__main__":
-    main()
+    unittest.main(argv=["first-arg-is-ignored"], exit=False)
